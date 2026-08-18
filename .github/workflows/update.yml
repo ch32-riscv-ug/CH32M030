@@ -1,14 +1,22 @@
 name: update
+# Daily mirror refresh. update.sh reads the catalogue in
+# ch32-riscv-ug/ch32-device-data to learn which documents belong to this mirror,
+# so this workflow is identical in every mirror and needs no per-repo edits.
+# 取得対象は ch32-device-data のカタログが決めるため、この workflow は全mirror共通。
 
 on:
   schedule:
-    # Daily 19:07 UTC. Staggered from the other device repositories.
-    - cron: '07 19 * * *'
+    # Daily 15:07 UTC (23:07 CST China / 00:07 JST) - China late-night.
+    # GitHub may delay runs by hours; scheduled early so it stays before
+    # China's heavy morning hours.
+    - cron: '07 15 * * *'
   workflow_dispatch:
 
+# Write permission is required to commit/push updated files.
 permissions:
   contents: write
 
+# Do not run overlapping updates.
 concurrency:
   group: update
   cancel-in-progress: false
@@ -20,6 +28,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # update.sh only downloads and extracts. It exits non-zero on a failed
+      # download (e.g. a changed URL), failing the job without overwriting
+      # good files.
       - name: Download datasheets / EVT
         run: |
           chmod +x ./update.sh
@@ -37,6 +48,10 @@ jobs:
             git push
           fi
 
+      # Keep the daily schedule from being auto-disabled after 60 days of
+      # repository inactivity: if the latest commit is older than 50 days, push
+      # one empty commit. Built-in GITHUB_TOKEN only (contents: write); no PAT,
+      # no third-party action.
       - name: Keepalive (avoid 60-day schedule auto-disable)
         run: |
           age_days=$(( ( $(date +%s) - $(git log -1 --format=%ct) ) / 86400 ))
