@@ -223,9 +223,9 @@ void PD_Init(void)
 				PORT[ch].DEVICE.Unattaching = 0;
 				pDevice_Unattached( ch );
 			}
-			if( (PORT[PHYch].PHY.ChangeVoltType == PD_VC_DCDCISink) && PORT[ch].PHY.VoltChanging )
+			if( (PORT[ch].PHY.ChangeVoltType == PD_VC_DCDCISink) && PORT[ch].PHY.VoltChanging )
 			{
-				PORT[PHYch].PHY.VoltChanging = 0;
+				PORT[ch].PHY.VoltChanging = 0;
 				pVolt_DCDCChangeIsink();
 			}
 		}

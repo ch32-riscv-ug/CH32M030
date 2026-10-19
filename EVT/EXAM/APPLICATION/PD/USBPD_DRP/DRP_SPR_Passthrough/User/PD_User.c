@@ -1,8 +1,8 @@
 /********************************** (C) COPYRIGHT *******************************
  * File Name          : PD_User.c
  * Author             : WCH
- * Version            : V1.0
- * Date               : 2025/12/06
+ * Version            : V1.1
+ * Date               : 2026/10/16
  * Description        : PD user uses function
  *********************************************************************************
  * Copyright (c) 2021 Nanjing Qinheng Microelectronics Co., Ltd.
@@ -331,7 +331,6 @@ void PD_User_Snk_Rx_SrcCap_DeductPower (u8 EN_Deduct)
 {
 
     st_SrcCap_Fixed *pSrcCap, *pSrcCap1;
-    ;
 
     // Reserve SrcCap generation
     for (u8 i = 0; i < PORT[PHYch].PHY.rxSrcCapCnt; i++) {

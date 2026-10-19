@@ -1,8 +1,8 @@
 /********************************** (C) COPYRIGHT *******************************
  * File Name          : PD_User.c
  * Author             : WCH
- * Version            : V1.0
- * Date               : 2025/12/06
+ * Version            : V1.1
+ * Date               : 2026/10/16
  * Description        : PD user uses function
  *********************************************************************************
  * Copyright (c) 2021 Nanjing Qinheng Microelectronics Co., Ltd.
@@ -126,7 +126,7 @@ void PD_User_Dev_Attatched( u8 ch )
 			Port_Sel( ch );
 
             PORT[PHYch].PHY.txSrcCapCnt = SrcCapCnt;
-            memset( PORT[PHYch].PHY.txSrcCap, 0, PORT[PHYch].PHY.txSrcCapCnt );		
+            memset( PORT[PHYch].PHY.txSrcCap, 0, PORT[PHYch].PHY.txSrcCapCnt*4 );		
             memcpy( PORT[PHYch].PHY.txSrcCap, &SrcCap, PORT[PHYch].PHY.txSrcCapCnt*4 );
             pProt_TX_SrcCap();
 		}	
@@ -322,7 +322,6 @@ void PD_User_Snk_Rx_SrcCap_DeductPower (u8 EN_Deduct)
 {
 
     st_SrcCap_Fixed *pSrcCap, *pSrcCap1;
-    ;
 
     // Reserve SrcCap generation
     for (u8 i = 0; i < PORT[PHYch].PHY.rxSrcCapCnt; i++) {

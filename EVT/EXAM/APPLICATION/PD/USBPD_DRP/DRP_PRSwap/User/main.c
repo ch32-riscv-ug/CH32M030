@@ -1,8 +1,8 @@
 /********************************** (C) COPYRIGHT *******************************
  * File Name		  : main.c
  * Author			  : WCH
- * Version			  : V1.0.0
- * Date			      : 2025/12/06
+ * Version			  : V1.0.1
+ * Date               : 2026/10/16
  * Description		  : Main program body.
  *********************************************************************************
  * Copyright (c) 2021 Nanjing Qinheng Microelectronics Co., Ltd.
@@ -224,9 +224,9 @@ void PD_Init(void)
 				PORT[ch].DEVICE.Unattaching = 0;
 				pDevice_Unattached( ch );
 			}
-			if( (PORT[PHYch].PHY.ChangeVoltType == PD_VC_DCDCISink) && PORT[ch].PHY.VoltChanging )
+			if( (PORT[ch].PHY.ChangeVoltType == PD_VC_DCDCISink) && PORT[ch].PHY.VoltChanging )
 			{
-				PORT[PHYch].PHY.VoltChanging = 0;
+				PORT[ch].PHY.VoltChanging = 0;
 				pVolt_DCDCChangeIsink();
 			}
 		}

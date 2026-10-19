@@ -57,7 +57,7 @@
       "sources": {
         "zh": {
           "file_id": 505,
-          "version": "1.5",
+          "version": "1.6",
           "scope": "CH32M030C8T7, CH32M030C8U3, CH32M030C8U7, CH32M030G8R7, CH32M030K8U7, CH32M030C9U7, CH32M030K9U7"
         }
       }
