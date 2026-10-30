@@ -156,6 +156,7 @@ handle_reset:
 .option	pop 
 1:
 	la sp, _eusrstack 
+
 /* Load highcode code  section from flash to RAM */
 2:
     la a0, _highcode_lma

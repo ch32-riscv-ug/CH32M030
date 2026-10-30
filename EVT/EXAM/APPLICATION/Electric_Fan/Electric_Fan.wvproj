@@ -8,14 +8,16 @@
 			"toolchain": "RISC-V",
 			"series": "CH32M030",
 			"rtos": "NoneOS",
-			"mcu": "CH32M030C8T",
+			"mcu": "CH32M030G8R",
 			"description": "=ROM(byte): 64K, SRAM(byte): 12K, CHIP PINS: 48, GPIO PORTS: 37.\\nWCH CH32M030 series of mainstream MCUs covers the needs of a large variety of applications in the industrial,medical and consumer markets. High performance with first-class peripherals and low-power,low-voltage operation is paired with a high level of integration at accessible prices with a simple architecture and easy-to-use tools.",
+			"tempratureScope": "",
 			"artifactType": "executable",
 			"link": "WCH-Link",
 			"peripheral_version": "=1.0",
 			"calibrateSupport": false,
 			"calibrateCommand": "",
 			"UIConfigSupport": false,
+			"UIConfigCommand": "",
 			"externalFlashSupport": false
 		},
 		"linkedFolders": [
@@ -235,7 +237,7 @@
 					},
 					"libraries": {
 						"libraries": [
-							"M11014_SV_1.00_VM030_LIB_20241105",
+							"M12013_SV_1.01_VM030_LIB",
 							"IQmath_RV32"
 						],
 						"library_search_path": [
@@ -274,7 +276,7 @@
 					},
 					"libraries": {
 						"libraries": [
-							"M11014_SV_1.00_VM030_LIB_20241105",
+							"M12013_SV_1.01_VM030_LIB",
 							"IQmath_RV32"
 						],
 						"library_search_path": [
@@ -362,7 +364,7 @@
 		"mcutype": "CH32M030",
 		"address": "0x08000000",
 		"target_path": "obj/Electric_Fan.hex",
-		"clkSpeed": "High",
+		"clkSpeed": "Middle",
 		"debug_interface_mode": "1-wire serial",
 		"erase": true,
 		"program": true,
@@ -372,7 +374,7 @@
 		"disablepowerout": false,
 		"clearcodeflash": false,
 		"disablecodeprotect": false,
-		"flashType": "",
+		"flashType": "Internal",
 		"asmFile_path": "",
 		"exepath": "",
 		"exearguments": ""

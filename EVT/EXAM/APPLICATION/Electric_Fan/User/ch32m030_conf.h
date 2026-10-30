@@ -1,8 +1,8 @@
 /********************************** (C) COPYRIGHT *******************************
  * File Name          : ch32m030_conf.h
  * Author             : WCH
- * Version            : V1.0.1
- * Date               : 2025/12/16
+ * Version            : V1.0.0
+ * Date               : 2024/09/01
  * Description        : Library configuration file.
 *********************************************************************************
 * Copyright (c) 2021 Nanjing Qinheng Microelectronics Co., Ltd.
@@ -25,9 +25,9 @@
 #include "ch32m030_spi.h"
 #include "ch32m030_tim.h"
 #include "ch32m030_uart.h"
+#include "ch32m030_usbpd.h"
 #include "ch32m030_wwdg.h"
 #include "ch32m030_usb.h"
-#include "ch32m030_usbpd.h"
 #endif /* __CH32M030_CONF_H */
 
 
