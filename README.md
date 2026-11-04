@@ -2,7 +2,7 @@
 
 <!-- This file is generated from ch32-riscv-ug/ch32-device-data (index/ + evidence/ + pipeline/build/build_readme.py). Edit there, not here. -->
 
-[Choose a part](#product-comparison) &middot; [Pin viewer](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32M030) &middot; [Pin maps](#pin-maps--alternate-functions) &middot; [Examples](#evt-examples) &middot; [Documents](#documents) &middot; [Address map](#address-map)
+[Choose a part](#product-comparison) &middot; [Documents](#documents) &middot; [Pin maps](#pin-maps--alternate-functions) &middot; [Pin viewer](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32M030) &middot; [Examples](#evt-examples) &middot; [Address map](#address-map)
 
 ## Quick start
 
@@ -13,6 +13,12 @@ Where these land **without writing a remap register**. SWD is live at reset; the
 | Series | SWDIO | SWCLK | UART TX | UART RX |
 |---|---|---|---|---|
 | CH32M030 | PA3 | PA2 | PC1 (USART1) | PC0 (USART1) |
+
+### Datasheets and reference manual
+
+- CH32M030DS0.PDF (datasheet): [English](https://ch32-riscv-ug.github.io/CH32M030/datasheet_en/CH32M030DS0.PDF) · [中文](https://ch32-riscv-ug.github.io/CH32M030/datasheet_zh/CH32M030DS0.PDF)
+- CH32M030DS2.PDF (datasheet): [中文](https://ch32-riscv-ug.github.io/CH32M030/datasheet_zh/CH32M030DS2.PDF)
+- CH32M030RM.PDF (reference manual): [English](https://ch32-riscv-ug.github.io/CH32M030/datasheet_en/CH32M030RM.PDF) · [中文](https://ch32-riscv-ug.github.io/CH32M030/datasheet_zh/CH32M030RM.PDF)
 
 ## Series
 
@@ -78,6 +84,37 @@ Only the 14 rows that differ between these 5 products; the other 15 are the same
 | USB PD Type-C | (CC1, CC2) (CC3, CC4) | (CC1R, CC2R) (CC3, CC4) Built-in Rd(1) | (CC1R, CC2R) (CC3, CC4) Built-in Rd(1) | (CC3, CC4) | (CC1R, CC2R) (CC3, CC4) Built-in Rd(1) |
 
 </details>
+
+## Block diagrams
+
+### CH32M030
+
+<img src="image/system_CH32M030.jpg" alt="CH32M030 system block diagram" />
+
+System block diagram from the [WCH product page](https://www.wch-ic.com/products/CH32M030.html).
+
+<details><summary>Internal block diagram (datasheet)</summary>
+
+<img src="image/architecture_CH32M030.png" alt="CH32M030 internal block diagram" />
+
+</details>
+
+## Documents
+
+| Document | Kind | English | 中文 |
+|---|---|---|---|
+| CH32M030DS0.PDF | datasheet | [page](https://www.wch-ic.com/downloads/CH32M030DS0_PDF.html) [mirror](https://ch32-riscv-ug.github.io/CH32M030/datasheet_en/CH32M030DS0.PDF) v1.2 | [page](https://www.wch.cn/downloads/CH32M030DS0_PDF.html) [mirror](https://ch32-riscv-ug.github.io/CH32M030/datasheet_zh/CH32M030DS0.PDF) v1.3 |
+| CH32M030DS2.PDF | datasheet | - | [page](https://www.wch.cn/downloads/CH32M030DS2_PDF.html) [mirror](https://ch32-riscv-ug.github.io/CH32M030/datasheet_zh/CH32M030DS2.PDF) v1.2 |
+| CH32M030RM.PDF | reference-manual | [page](https://www.wch-ic.com/downloads/CH32M030RM_PDF.html) [mirror](https://ch32-riscv-ug.github.io/CH32M030/datasheet_en/CH32M030RM.PDF) v1.2 | [page](https://www.wch.cn/downloads/CH32M030RM_PDF.html) [mirror](https://ch32-riscv-ug.github.io/CH32M030/datasheet_zh/CH32M030RM.PDF) v1.2 |
+| CH32M030EVT.ZIP | evt | - | [page](https://www.wch.cn/downloads/CH32M030EVT_ZIP.html) [mirror](https://github.com/ch32-riscv-ug/CH32M030/tree/main/EVT) v1.7 |
+
+### Evaluation boards
+
+- board-manual:en: [CH32M030 Evaluation Board Reference-EN.pdf](https://ch32-riscv-ug.github.io/CH32M030/EVT/PUB/CH32M030%20Evaluation%20Board%20Reference-EN.pdf)
+- board-manual:zh: [CH32M030评估板说明书.pdf](https://ch32-riscv-ug.github.io/CH32M030/EVT/PUB/CH32M030%E8%AF%84%E4%BC%B0%E6%9D%BF%E8%AF%B4%E6%98%8E%E4%B9%A6.pdf)
+- schematic-pdf: [CH32M030SCH.pdf](https://ch32-riscv-ug.github.io/CH32M030/EVT/PUB/CH32M030SCH.pdf)
+
+5 board schematics under `EVT/PUB/SCHPCB/`: `CH32M030C8T7-R0`, `CH32M030C8U3-R0`, `CH32M030C8U7-R0`, `CH32M030G8R7-R0`, `CH32M030K8U7-R0`
 
 ## Packages & pinout drawings
 
@@ -212,33 +249,11 @@ Pin functions (filterable): [ALL](https://ch32-riscv-ug.github.io/ch32-device-da
 
 </details>
 
-## Block diagrams
-
-### CH32M030
-<img src="image/architecture_CH32M030.png" alt="CH32M030 block diagram" />
-
 ## EVT examples
 
 120 routines in [EVT/EXAM](https://github.com/ch32-riscv-ug/CH32M030/tree/main/EVT/EXAM):
 
 [ADC](https://github.com/ch32-riscv-ug/CH32M030/tree/main/EVT/EXAM/ADC) 7 · [APPLICATION](https://github.com/ch32-riscv-ug/CH32M030/tree/main/EVT/EXAM/APPLICATION) 24 · [DMA](https://github.com/ch32-riscv-ug/CH32M030/tree/main/EVT/EXAM/DMA) 2 · [EXTI](https://github.com/ch32-riscv-ug/CH32M030/tree/main/EVT/EXAM/EXTI) 1 · [FLASH](https://github.com/ch32-riscv-ug/CH32M030/tree/main/EVT/EXAM/FLASH) 2 · [GPIO](https://github.com/ch32-riscv-ug/CH32M030/tree/main/EVT/EXAM/GPIO) 1 · [I2C](https://github.com/ch32-riscv-ug/CH32M030/tree/main/EVT/EXAM/I2C) 6 · [IAP](https://github.com/ch32-riscv-ug/CH32M030/tree/main/EVT/EXAM/IAP) 1 · [INT](https://github.com/ch32-riscv-ug/CH32M030/tree/main/EVT/EXAM/INT) 2 · [OPA](https://github.com/ch32-riscv-ug/CH32M030/tree/main/EVT/EXAM/OPA) 3 · [PWR](https://github.com/ch32-riscv-ug/CH32M030/tree/main/EVT/EXAM/PWR) 4 · [RCC](https://github.com/ch32-riscv-ug/CH32M030/tree/main/EVT/EXAM/RCC) 3 · [SDI_Printf](https://github.com/ch32-riscv-ug/CH32M030/tree/main/EVT/EXAM/SDI_Printf) 1 · [SPI](https://github.com/ch32-riscv-ug/CH32M030/tree/main/EVT/EXAM/SPI) 7 · [SYSTICK](https://github.com/ch32-riscv-ug/CH32M030/tree/main/EVT/EXAM/SYSTICK) 1 · [TIM](https://github.com/ch32-riscv-ug/CH32M030/tree/main/EVT/EXAM/TIM) 18 · [UART](https://github.com/ch32-riscv-ug/CH32M030/tree/main/EVT/EXAM/UART) 9 · [USART](https://github.com/ch32-riscv-ug/CH32M030/tree/main/EVT/EXAM/USART) 8 · [USB](https://github.com/ch32-riscv-ug/CH32M030/tree/main/EVT/EXAM/USB) 17 · [USBPD](https://github.com/ch32-riscv-ug/CH32M030/tree/main/EVT/EXAM/USBPD) 2 · [WWDG](https://github.com/ch32-riscv-ug/CH32M030/tree/main/EVT/EXAM/WWDG) 1
-
-## Documents
-
-| Document | Kind | English | 中文 |
-|---|---|---|---|
-| CH32M030DS0.PDF | datasheet | [page](https://www.wch-ic.com/downloads/CH32M030DS0_PDF.html) [mirror](https://ch32-riscv-ug.github.io/CH32M030/datasheet_en/CH32M030DS0.PDF) v1.2 | [page](https://www.wch.cn/downloads/CH32M030DS0_PDF.html) [mirror](https://ch32-riscv-ug.github.io/CH32M030/datasheet_zh/CH32M030DS0.PDF) v1.3 |
-| CH32M030DS2.PDF | datasheet | - | [page](https://www.wch.cn/downloads/CH32M030DS2_PDF.html) [mirror](https://ch32-riscv-ug.github.io/CH32M030/datasheet_zh/CH32M030DS2.PDF) v1.2 |
-| CH32M030RM.PDF | reference-manual | [page](https://www.wch-ic.com/downloads/CH32M030RM_PDF.html) [mirror](https://ch32-riscv-ug.github.io/CH32M030/datasheet_en/CH32M030RM.PDF) v1.2 | [page](https://www.wch.cn/downloads/CH32M030RM_PDF.html) [mirror](https://ch32-riscv-ug.github.io/CH32M030/datasheet_zh/CH32M030RM.PDF) v1.2 |
-| CH32M030EVT.ZIP | evt | - | [page](https://www.wch.cn/downloads/CH32M030EVT_ZIP.html) [mirror](https://github.com/ch32-riscv-ug/CH32M030/tree/main/EVT) v1.7 |
-
-### Evaluation boards
-
-- board-manual:en: [CH32M030 Evaluation Board Reference-EN.pdf](https://github.com/ch32-riscv-ug/CH32M030/blob/main/EVT/PUB/CH32M030%20Evaluation%20Board%20Reference-EN.pdf)
-- board-manual:zh: [CH32M030评估板说明书.pdf](https://github.com/ch32-riscv-ug/CH32M030/blob/main/EVT/PUB/CH32M030%E8%AF%84%E4%BC%B0%E6%9D%BF%E8%AF%B4%E6%98%8E%E4%B9%A6.pdf)
-- schematic-pdf: [CH32M030SCH.pdf](https://github.com/ch32-riscv-ug/CH32M030/blob/main/EVT/PUB/CH32M030SCH.pdf)
-
-5 board schematics under `EVT/PUB/SCHPCB/`: `CH32M030C8T7-R0`, `CH32M030C8U3-R0`, `CH32M030C8U7-R0`, `CH32M030G8R7-R0`, `CH32M030K8U7-R0`
 
 ## Reference
 
