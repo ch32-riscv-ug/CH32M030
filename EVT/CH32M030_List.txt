@@ -53,6 +53,9 @@ https://wch.cn
   |      |      |      |      |      |      |-- SRC_DRSwap_Billboard：Port0 PD建立后，发送DRSwap消息，枚举USB Billboard指示无DP能力弹窗
   |      |      |      |      |      |      |-- SRC_GetSinkCap：Port0 PD建立后，发送GetSinkCap消息获取SNK的供电消息能力
   |      |      |      |      |      |      |-- SRC_SPR_Request_IsinkVoltChange：ISINK，Port0握手SNK，根据SNK的Request消息进行调压，建立PD通信
+  |      |      |      |      |-- WCHGUI
+  |      |      |      |      |      |-- WCH-GUI-FLASH: GUI 内外部FLASH
+  |      |      |      |      |      |-- WCH-GUI-LIVE: GUI 屏幕显示
   |      |      |      |-- DMA
   |      |      |      |      |-- DMA_MEM2MEM：储存器到储存器模式例程
   |      |      |      |      |-- DMA_MEM2PERIP：储存器到外设模式、外设到储存器模式例程见各外设子例程

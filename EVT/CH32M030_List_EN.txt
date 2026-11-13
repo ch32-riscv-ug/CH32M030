@@ -53,6 +53,9 @@ Directory
   |      |      |      |      |      |      |-- SRC_DRSwap_Billboard: After establishing Port0 PD, send a DRSwap message and display a pop-up indicating USB Billboard with no DP capability
   |      |      |      |      |      |      |-- SRC_GetSinkCap: After establishing Port0 PD, send a GetSinkCap message to obtain the power supply message capability of the SNK
   |      |      |      |      |      |      |-- SRC_SPR_Request_IsinkVoltChange: ISINK, Port0 shakes hands with SNK, adjusts the voltage according to SNK's Request message, and establishes PD communication
+  |      |      |      |      |-- WCHGUI
+  |      |      |      |      |      |-- WCH-GUI-FLASH: GUI FLASH
+  |      |      |      |      |      |-- WCH-GUI-LIVE: GUI LIVE
   |      |      |      |-- DMA
   |      |      |      |      |-- DMA_MEM2MEM:memory to memory mode routine
   |      |      |      |      |-- DMA_MEM2PERIP:see each peripheral subroutine for memory to peripheral mode and peripheral to memory mode routines
