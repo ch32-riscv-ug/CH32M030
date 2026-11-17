@@ -23,23 +23,27 @@
 		"linkedFolders": [
 			{
 				"name": "Core",
-				"location": "../../../../SRC/Core"
+				"location": "../../../SRC/Core"
 			},
 			{
 				"name": "Debug",
-				"location": "../../../../SRC/Debug"
+				"location": "../../../SRC/Debug"
 			},
 			{
 				"name": "Ld",
-				"location": "../../../../SRC/Ld"
+				"location": "../../../SRC/Ld"
 			},
 			{
 				"name": "Peripheral",
-				"location": "../../../../SRC/Peripheral"
+				"location": "../../../SRC/Peripheral"
 			},
 			{
 				"name": "Startup",
-				"location": "../../../../SRC/Startup"
+				"location": "../../../SRC/Startup"
+			},
+			{
+				"name": "WVUI_Lib",
+				"location": "../WVUI_Lib"
 			}
 		],
 		"removedResources": [
@@ -64,7 +68,7 @@
 				"name": "*.tar"
 			}
 		],
-		"projectName": "wvui_ch32m030",
+		"projectName": "DEMO1",
 		"architecture": "RISC-V",
 		"projectType": "c"
 	},
@@ -175,7 +179,9 @@
 							"${project}/User/Drivers",
 							"${project}/User/wvui",
 							"${project}/User/port_template",
-							"${project}/User/wvui_app"
+							"${project}/User/wvui_app",
+							"${project}/WVUI_Lib",
+							"${project}/WVUI_Lib/widgets"
 						],
 						"include_system_paths": [],
 						"include_files": []
@@ -366,7 +372,7 @@
 	"flashConfig": {
 		"mcutype": "CH32M030",
 		"address": "0x08000000",
-		"target_path": "obj/wvui_ch32m030.hex",
+		"target_path": "obj/DEMO1.hex",
 		"clkSpeed": "High",
 		"debug_interface_mode": "1-wire serial",
 		"erase": true,
@@ -392,7 +398,7 @@
 			"configOptions": [
 				"-f \"${WCH:OpenOCD:default}/bin/wch-riscv.cfg\""
 			],
-			"host": "localhost",
+			"host": "127.0.0.1",
 			"port": 3333,
 			"skipDownloadBeforeDebug": false,
 			"enablePageEraser": false,
@@ -447,8 +453,8 @@
 			"showDebugOutputTimestamps": true
 		},
 		"reserve": {
-			"PROGRAM_NAME": "obj/wvui_ch32m030.elf",
-			"PROJECT_ATTR": "wvui_ch32m030",
+			"PROGRAM_NAME": "obj/DEMO1.elf",
+			"PROJECT_ATTR": "DEMO1",
 			"PROJECT_BUILD_CONFIG_AUTO_ATTR": true,
 			"PROJECT_BUILD_CONFIG_ID_ATTR": "",
 			"ATTR_BUILD_BEFORE_LAUNCH_ATTR": 2,

@@ -22,28 +22,28 @@
 		},
 		"linkedFolders": [
 			{
+				"name": "WCHGUI_Lib",
+				"location": "../WCHGUI_Lib"
+			},
+			{
 				"name": "Core",
-				"location": "../../../../SRC/Core"
+				"location": "../../../SRC/Core"
 			},
 			{
 				"name": "Debug",
-				"location": "../../../../SRC/Debug"
+				"location": "../../../SRC/Debug"
 			},
 			{
 				"name": "Ld",
-				"location": "../../../../SRC/Ld"
+				"location": "../../../SRC/Ld"
 			},
 			{
 				"name": "Peripheral",
-				"location": "../../../../SRC/Peripheral"
+				"location": "../../../SRC/Peripheral"
 			},
 			{
 				"name": "Startup",
-				"location": "../../../../SRC/Startup"
-			},
-			{
-				"name": "WCHGUI_Lib",
-				"location": "../WCHGUI_Lib"
+				"location": "../../../SRC/Startup"
 			}
 		],
 		"removedResources": [
@@ -68,7 +68,7 @@
 				"name": "*.tar"
 			}
 		],
-		"projectName": "GUI_ExternalFlash",
+		"projectName": "GUI_Onflash",
 		"architecture": "RISC-V",
 		"projectType": "c"
 	},
@@ -179,7 +179,8 @@
 							"${project}/User/Drivers",
 							"${project}/User/wui_port",
 							"${project}/User/wui",
-							"${project}/User/wui_user"
+							"${project}/User/wui_user",
+							"${project}/WCHGUI_Lib"
 						],
 						"include_system_paths": [],
 						"include_files": []
@@ -253,15 +254,17 @@
 						"omit_all_symbol_information": false
 					},
 					"libraries": {
-						"libraries": [],
-						"library_search_path": []
+						"libraries": [
+							"wui_0.2-imc"
+						],
+						"library_search_path": [
+							"${project}/WCHGUI_Lib"
+						]
 					},
 					"miscellaneous": {
 						"picolibc": "disabled",
 						"linker_flags": [],
-						"other_objects": [
-							"${project}/User/wui/libwui_0.2-imc.a"
-						],
+						"other_objects": [],
 						"generate_map": "\"${BuildArtifactFileBaseName}.map\"",
 						"cross_reference": false,
 						"print_link_map": false,
@@ -289,15 +292,17 @@
 						"omit_all_symbol_information": false
 					},
 					"libraries": {
-						"libraries": [],
-						"library_search_path": []
+						"libraries": [
+							"wui_0.2-imc"
+						],
+						"library_search_path": [
+							"${project}/WCHGUI_Lib"
+						]
 					},
 					"miscellaneous": {
 						"picolibc": "disabled",
 						"linker_flags": [],
-						"other_objects": [
-							"${project}/User/wui/libwui_0.2-imc.a"
-						],
+						"other_objects": [],
 						"generate_map": "\"${BuildArtifactFileBaseName}.map\"",
 						"cross_reference": false,
 						"print_link_map": false,
@@ -374,7 +379,7 @@
 	"flashConfig": {
 		"mcutype": "CH32M030",
 		"address": "0x08000000",
-		"target_path": "obj/GUI_ExternalFlash.hex",
+		"target_path": "obj/GUI_Onflash.hex",
 		"clkSpeed": "High",
 		"debug_interface_mode": "1-wire serial",
 		"erase": true,
@@ -385,7 +390,7 @@
 		"disablepowerout": false,
 		"clearcodeflash": false,
 		"disablecodeprotect": false,
-		"flashType": "Internal",
+		"flashType": "",
 		"asmFile_path": "",
 		"exepath": "",
 		"exearguments": ""
@@ -400,7 +405,7 @@
 			"configOptions": [
 				"-f \"${WCH:OpenOCD:default}/bin/wch-riscv.cfg\""
 			],
-			"host": "localhost",
+			"host": "127.0.0.1",
 			"port": 3333,
 			"skipDownloadBeforeDebug": false,
 			"enablePageEraser": false,
@@ -455,8 +460,8 @@
 			"showDebugOutputTimestamps": true
 		},
 		"reserve": {
-			"PROGRAM_NAME": "obj/GUI_ExternalFlash.elf",
-			"PROJECT_ATTR": "GUI_ExternalFlash",
+			"PROGRAM_NAME": "obj/GUI_Onflash.elf",
+			"PROJECT_ATTR": "GUI_Onflash",
 			"PROJECT_BUILD_CONFIG_AUTO_ATTR": true,
 			"PROJECT_BUILD_CONFIG_ID_ATTR": "",
 			"ATTR_BUILD_BEFORE_LAUNCH_ATTR": 2,

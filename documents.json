@@ -42,7 +42,7 @@
       "sources": {
         "zh": {
           "file_id": 543,
-          "version": "1.2",
+          "version": "1.3",
           "scope": "CH32M030K9U7, CH32M030C9U7"
         }
       }
@@ -57,7 +57,7 @@
       "sources": {
         "zh": {
           "file_id": 505,
-          "version": "1.71",
+          "version": "1.72",
           "scope": "CH32M030C8T7, CH32M030C8U3, CH32M030C8U7, CH32M030G8R7, CH32M030K8U7, CH32M030C9U7, CH32M030K9U7"
         }
       }

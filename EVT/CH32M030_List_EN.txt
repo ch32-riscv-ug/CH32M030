@@ -1,5 +1,5 @@
 
-Nanjing Qinheng Microelectronics Co., Ltd. 2026.10
+Nanjing Qinheng Microelectronics Co., Ltd. 2026.11
 
 https://wch-ic.com
 
@@ -53,9 +53,6 @@ Directory
   |      |      |      |      |      |      |-- SRC_DRSwap_Billboard: After establishing Port0 PD, send a DRSwap message and display a pop-up indicating USB Billboard with no DP capability
   |      |      |      |      |      |      |-- SRC_GetSinkCap: After establishing Port0 PD, send a GetSinkCap message to obtain the power supply message capability of the SNK
   |      |      |      |      |      |      |-- SRC_SPR_Request_IsinkVoltChange: ISINK, Port0 shakes hands with SNK, adjusts the voltage according to SNK's Request message, and establishes PD communication
-  |      |      |      |      |-- WCHGUI
-  |      |      |      |      |      |-- WCH-GUI-FLASH: GUI FLASH
-  |      |      |      |      |      |-- WCH-GUI-LIVE: GUI LIVE
   |      |      |      |-- DMA
   |      |      |      |      |-- DMA_MEM2MEM:memory to memory mode routine
   |      |      |      |      |-- DMA_MEM2PERIP:see each peripheral subroutine for memory to peripheral mode and peripheral to memory mode routines
@@ -66,6 +63,19 @@ Directory
   |      |      |      |      |-- FLASH_ECC:FLASH ECC Calibration Routine
   |      |      |      |-- GPIO
   |      |      |      |      |-- GPIO_Toggle:GPIO routines 
+  |      |      |      |-- GUI
+  |      |      |      |      |-- WCH-GUI-FLASH：WCH-GUI-FLASH routine(Low CPU usage) 
+  |      |      |      |      |      |--GUI_ExternalFlash: WCH-GUI-FLASH use external flash routine
+  |      |      |      |      |      |--GUI_Onflash：WCH-GUI-FLASH use internal flash routine
+  |      |      |      |      |      |--WCHGUI_Lib: WCH-GUI-FLASH core library (with low CPU usage)
+  |      |      |      |      |      |--DOC
+  |      |      |      |      |      |      |--Instructions for downloading external FLASH.pdf
+  |      |      |      |      |      |      |--WCHGUI software documentation.pdf
+  |      |      |      |      |-- WCH-GUI-LIVE：WCH-GUI-LIVE routine(Save storage resources)
+  |      |      |      |      |      |--DEMO1: WCH-GUI-LIVE basic routine
+  |      |      |      |      |      |--WVUI_Lib: WCH-GUI-LIVE core library(with save storage resources)
+  |      |      |      |      |      |--DOC
+  |      |      |      |      |      |      |--WCH-GUI-Live library Reference Manual.pdf 
   |      |      |      |-- I2C
   |      |      |      |      |-- I2C_7bit_Mode:7-bit address mode, master / slave mode, transceiver routine
   |      |      |      |      |-- I2C_10bit_Mode:10 bit address mode, master / slave mode transceiver routine

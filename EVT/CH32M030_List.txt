@@ -1,5 +1,5 @@
 
-南京沁恒微电子股份有限公司 2026.03
+南京沁恒微电子股份有限公司 2026.11
 最新资料请到我们的网站上查询
 https://wch.cn
 
@@ -53,9 +53,6 @@ https://wch.cn
   |      |      |      |      |      |      |-- SRC_DRSwap_Billboard：Port0 PD建立后，发送DRSwap消息，枚举USB Billboard指示无DP能力弹窗
   |      |      |      |      |      |      |-- SRC_GetSinkCap：Port0 PD建立后，发送GetSinkCap消息获取SNK的供电消息能力
   |      |      |      |      |      |      |-- SRC_SPR_Request_IsinkVoltChange：ISINK，Port0握手SNK，根据SNK的Request消息进行调压，建立PD通信
-  |      |      |      |      |-- WCHGUI
-  |      |      |      |      |      |-- WCH-GUI-FLASH: GUI 内外部FLASH
-  |      |      |      |      |      |-- WCH-GUI-LIVE: GUI 屏幕显示
   |      |      |      |-- DMA
   |      |      |      |      |-- DMA_MEM2MEM：储存器到储存器模式例程
   |      |      |      |      |-- DMA_MEM2PERIP：储存器到外设模式、外设到储存器模式例程见各外设子例程
@@ -65,7 +62,20 @@ https://wch.cn
   |      |      |      |      |-- FLASH_Program：FLASH的擦/读/写，以及快速编程  
   |      |      |      |      |-- FLASH_ECC：FLASH ECC校验
   |      |      |      |-- GPIO
-  |      |      |      |      |-- GPIO_Toggle：GPIO例程 
+  |      |      |      |      |-- GPIO_Toggle：GPIO例程
+  |      |      |      |-- GUI
+  |      |      |      |      |-- WCH-GUI-FLASH：WCH-GUI-FLASH例程(CPU占用率低) 
+  |      |      |      |      |      |--GUI_ExternalFlash: WCH-GUI-FLASH 使用外部flash的例程
+  |      |      |      |      |      |--GUI_Onflash：WCH-GUI-FLASH 使用内部flash的例程
+  |      |      |      |      |      |--WCHGUI_Lib: WCH-GUI-FLASH 的核心库(CPU占用率低)
+  |      |      |      |      |      |--DOC
+  |      |      |      |      |      |      |--片外FLASH下载操作说明.pdf
+  |      |      |      |      |      |      |--沁恒WCHGUI软件说明文档.pdf
+  |      |      |      |      |-- WCH-GUI-LIVE：WCH-GUI-LIVE例程(节省存储资源) 
+  |      |      |      |      |      |--DEMO1: WCH-GUI-LIVE的基础例程
+  |      |      |      |      |      |--WVUI_Lib: WCH-GUI-LIVE 的核心库(节省存储资源)
+  |      |      |      |      |      |--DOC
+  |      |      |      |      |      |      |--WCH-GUI-Live库参考手册.pdf   
   |      |      |      |-- I2C
   |      |      |      |      |-- I2C_7bit_Mode：7位地址模式，Master/Slave 模式收发例程
   |      |      |      |      |-- I2C_10bit_Mode：10位地址模式，Master/Slave 模式收发例程
